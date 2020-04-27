@@ -1,0 +1,59 @@
+{% load static %}
+{% load cms_tags menu_tags sekizai_tags static%}
+{% load menu_tags %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>{% block title %}Simple Sidebar - Start Bootstrap Template{% endblock title %}</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %} " rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="{% static 'css/simple-sidebar.css' %} " rel="stylesheet">
+  {% render_block "css" %}
+</head>
+
+<body>
+  {% cms_toolbar %}
+  <div class="d-flex" id="wrapper">
+    <header>{% static_placeholder 'header' %}
+    </header>
+    </div>
+    <!-- /#page-content-wrapper -->
+
+  <!-- /#wrapper -->
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="{% static 'vendor/jquery/jquery.min.js' %} "></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %} "></script>
+
+  <!-- Menu Toggle Script -->
+  <script>
+    $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+    });
+  </script>
+
+
+
+
+
+<footer>
+  {% static_placeholder 'footer' %}
+</footer>
+
+
+
+{% render_block "js" %}
+</body>
+
+</html>
